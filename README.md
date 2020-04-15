@@ -23,3 +23,5 @@ console.log(test);
 console.log(decipher(test, passphrase));
   //expected output = Secret Code
 ```
+
+This package only support message and passphrase that contain alphabet, number, space, ".", and ","
