@@ -1,9 +1,9 @@
 const createTable = () => {
-  let abjad = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 123456789';
+  let abjad = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 123456789,.ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 123456789,.';
   let table = [];
-  for (let i = 0; i < 62; i++) {
+  for (let i = 0; i < 64; i++) {
     let temp = [];
-    for (let j = 0; j < 62; j++) {
+    for (let j = 0; j < 64; j++) {
       temp.push(abjad[j + i]);
     }
     table.push(temp);
@@ -28,7 +28,7 @@ const makePassphrase = (message, passphrase) => {
 }
 
 const checkAbjad = (message, passphrase) => {
-  const abjad = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 123456789';
+  const abjad = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 123456789,.';
   for (let i = 0; i < message.length; i++) {
     let flag = false;
     for (let j = 0; j < abjad.length; j++) {
@@ -57,7 +57,7 @@ const cipher = (message, passphrase) => {
   checkAbjad(message, passphrase);
   let table = createTable();
   let key = makePassphrase(message, passphrase);
-  let abjad = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 123456789';
+  let abjad = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 123456789,.';
   let encryptedMessage = '';
   for (let i = 0; i < message.length; i++) {
     let indexI
@@ -82,7 +82,7 @@ const cipher = (message, passphrase) => {
 const decipher = (message, passphrase) => {
   let table = createTable();
   let key = makePassphrase(message, passphrase);
-  let abjad = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 123456789';
+  let abjad = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 123456789,.';
   let decryptedMessage = '';
   for (let i = 0; i < message.length; i++) {
     let indexJ = abjad.indexOf(key[i]);

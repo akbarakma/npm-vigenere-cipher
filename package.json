@@ -1,7 +1,7 @@
 {
   "name": "npm-vigenere-cipher",
-  "version": "1.0.0",
-  "description": "Encode and Decode text",
+  "version": "1.0.3",
+  "description": "Cipher and Decipher simple text",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,9 @@
     "url": "git+https://github.com/akbarakma/npm-vigenere-cipher.git"
   },
   "keywords": [
-    "vigenere"
+    "vigenere",
+    "cipher",
+    "decipher"
   ],
   "author": "akbarakma",
   "license": "ISC",
